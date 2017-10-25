@@ -48,7 +48,7 @@ objects:
           service: mattermost-push-proxy
       spec:
         containers:
-        - image: registry.centos.org/openshiftio/mattermost-push-proxy:3.10.0
+        - image: registry.centos.org/mattermost/mattermost-push-proxy:3.10.0
           imagePullPolicy: Always
           name: mattermost-push-proxy
           ports:
