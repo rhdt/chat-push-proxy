@@ -4,16 +4,6 @@ metadata:
   name: mattermost-push-proxy
   creationTimestamp: null
 objects:
-- kind: PersistentVolumeClaim
-  apiVersion: v1
-  metadata:
-    name: "mattermost-push-proxy-config"
-  spec:
-    accessModes:
-      - ReadWriteOnce
-    resources:
-      requests:
-        storage: "1Gi"
 - kind: DeploymentConfig
   apiVersion: v1
   metadata:
@@ -81,17 +71,9 @@ objects:
                 secretKeyRef:
                   name: mattermost-push-proxy-config
                   key: applepushrnpass
-          volumeMounts:
-            - name: config
-              mountPath: /opt/mattermost-push-proxy/config
-        volumes:
-        - name: config
-          persistentVolumeClaim:
-            claimName: mattermost-push-proxy-config
         resources: {}
         terminationMessagePath: /dev/termination-log
         readinessProbe:
-            failureThreshold: 3
             httpGet:
               path: /
               port: 8066
