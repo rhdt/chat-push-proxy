@@ -34,7 +34,7 @@ objects:
           service: mattermost-push-proxy
       spec:
         containers:
-        - image: registry.centos.org/mattermost/mattermost-push-proxy:3.10.0
+        - image: registry.centos.org/mattermost/mattermost-push-proxy:${IMAGE_TAG}
           imagePullPolicy: Always
           name: mattermost-push-proxy
           ports:
@@ -139,4 +139,4 @@ objects:
   status: {}
 parameters:
 - name: IMAGE_TAG
-  value: latest
+  value: 3.10.0
