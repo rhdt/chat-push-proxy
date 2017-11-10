@@ -139,4 +139,4 @@ objects:
   status: {}
 parameters:
 - name: IMAGE_TAG
-  value: 3.10.0
+  value: "3.10.0"
